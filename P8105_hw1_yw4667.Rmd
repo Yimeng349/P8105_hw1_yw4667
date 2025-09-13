@@ -66,3 +66,16 @@ ggsave("temp_vs_time_scatterplot.png")
 ```
 
 # Problem 2
+
+## Set seed for reproducibility
+set.seed(1234)
+
+## Create the data frame with different variable types
+```{r dataframe}
+df <- data.frame(
+  numeric_var = rnorm(10, mean = 0, sd = 1),
+  logical_var = rnorm(10, mean = 0, sd = 1) > 0,
+  character_var = letters[1:10],
+  factor_var = factor(rep(c("Low", "Medium", "High"), length.out = 10))
+  )
+```
