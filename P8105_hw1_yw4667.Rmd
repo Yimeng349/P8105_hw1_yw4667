@@ -79,3 +79,22 @@ df <- data.frame(
   factor_var = factor(rep(c("Low", "Medium", "High"), length.out = 10))
   )
 ```
+## Using pull function and try to calculate mean
+```{r pull function}
+library(tidyverse)
+
+df %>% pull(numeric_var) %>% mean()
+
+df %>% pull(logical_var) %>% mean()
+
+df %>% pull(character_var) %>% mean()
+
+df %>% pull(factor_var) %>% mean()
+```
+
+## Convert logical/character/factor variables to numeric
+```{r numeric function,eval = FALSE}
+as.numeric(df$logical_var)
+as.numeric(df$character_var)  
+as.numeric(df$factor_var)
+```
